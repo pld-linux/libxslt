@@ -86,7 +86,7 @@ Summary:	Python support for libxslt
 Summary(pl):	Modu³y jêzyka Python dla biblioteki libxslt
 Group:		Libraries/Python
 Requires:	python-libxml2 = %{libxml2ver}
-%requires_eq	python
+%pyrequires_eq	python
 
 %description -n python-%{name}
 Python support for libxslt.
