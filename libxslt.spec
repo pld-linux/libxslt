@@ -12,6 +12,7 @@ Group(pl):	Biblioteki
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= 2.4.0
+BuildRequires:	autoconf
 BuildRequires:	libxml2-devel >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +43,8 @@ Static libraries of libxslt - XSLT processor.
 %setup  -q
 
 %build
-%configure2_13
+autoconf
+%configure
 %{__make}
 
 %install
