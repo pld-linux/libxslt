@@ -1,17 +1,15 @@
-%define		_snap	050329
-%define		libxml2ver	1:2.6.17
+%define		libxml2ver	1:2.6.19
 
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.13
-Release:	1.%{_snap}.1
+Version:	1.1.14
+Release:	1
 License:	MIT
 Group:		Libraries
-#Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
-Source0:	http://ep09.pld-linux.org/~djurban/snap/%{name}-%{_snap}.tar.gz
-# Source0-md5:	39ff98e1467a9e07bde3d79cddf6673e
+Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
+# Source0-md5:	db71660bb7d01ccd4e6be990af8d813b
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf
 BuildRequires:	automake
