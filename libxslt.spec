@@ -1,7 +1,8 @@
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
+Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
-Version:	1.0.6
+Version:	1.0.7
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -15,18 +16,25 @@ Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 Patch0:		%{name}-noext.patch
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.4.6
+Requires:	libxml2 >= 2.4.10
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel >= 2.4.7
+BuildRequires:	libxml2-devel >= 2.4.10
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Library for XSLT processing.
 
+%description -l pt_BR
+Esta biblioteca C permite a transformação de arquivos XML em outros
+arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
+transformação dos estilos XSLT. O comando xsltproc é uma interface em
+linha de comandos para o mecanismo XSLT.
+
 %package devel
 Summary:	Development libraries and header files of libxslt
+Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -40,8 +48,14 @@ Requires:	%{name} = %{version}
 %description devel
 Development libraries and header files of libxslt - XSLT processor.
 
+%description -l pt_BR devel
+Esta biblioteca C permite a transformação de arquivos XML em outros
+arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
+transformação dos estilos XSLT.
+
 %package static
 Summary:	Static libraries of libxslt
+Summary(pt_BR):	Bibliotecas estáticas para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -54,6 +68,12 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Static libraries of libxslt - XSLT processor.
+
+%description -l pt_BR static
+Esta biblioteca C permite a transformação de arquivos XML em outros
+arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
+transformação dos estilos XSLT. Estas são as bibliotecas em sua versão
+estática.
 
 %package progs
 Summary:	XSLT processor
