@@ -21,6 +21,7 @@ BuildRequires:	python-libxml2 >= %{libxml2ver}
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libxslt1
 
 %description
 Library for XSLT processing.
@@ -39,6 +40,7 @@ Summary:	Development libraries and header files of libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Obsoletes:	libxslt1-devel
 
 %description devel
 Development libraries and header files of libxslt - XSLT processor.
@@ -74,6 +76,7 @@ Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Group:		Applications/Text
 Requires:	%{name} = %{version}
+Obsoletes:	libxslt-proc
 
 %description progs
 XSLT processor.
@@ -87,6 +90,7 @@ Summary(pl):	Modu³y jêzyka Python dla biblioteki libxslt
 Group:		Libraries/Python
 Requires:	python-libxml2 = %{libxml2ver}
 %pyrequires_eq	python
+Obsoletes:	libxslt-python
 
 %description -n python-%{name}
 Python support for libxslt.
