@@ -7,7 +7,7 @@ Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
 Version:	1.0.30
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
@@ -131,11 +131,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README ChangeLog TODO doc/{*.{gif,html},html}
+%doc AUTHORS ChangeLog Copyright FEATURES NEWS README TODO
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%doc doc/{*.{gif,html},html}
 %attr(755,root,root) %{_bindir}/xslt-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
