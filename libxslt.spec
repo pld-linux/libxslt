@@ -44,6 +44,7 @@ Summary(pl):	Pliki nag³ówkowe libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libxml2-devel >= %{libxml2ver}
 Obsoletes:	libxslt1-devel
 
 %description devel
@@ -93,6 +94,7 @@ Procesor XSLT.
 Summary:	Python support for libxslt
 Summary(pl):	Modu³y jêzyka Python dla biblioteki libxslt
 Group:		Libraries/Python
+Requires:	%{name} = %{version}-%{release}
 Requires:	python-libxml2 => %{libxml2ver}
 %pyrequires_eq	python-modules
 Obsoletes:	libxslt-python
