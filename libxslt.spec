@@ -2,7 +2,7 @@ Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
-Version:	1.0.7
+Version:	1.0.8
 Release:	1
 License:	GPL
 Group:		Libraries
