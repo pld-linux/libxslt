@@ -20,7 +20,6 @@ BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	perl-base
 BuildRequires:	python-devel
 BuildRequires:	python-libxml2 >= %{libxml2ver}
-BuildRequires:	rpm-pythonprov
 Requires:	libgcrypt >= 1.1.42
 Requires:	libxml2 >= %{libxml2ver}
 Obsoletes:	libxslt1
