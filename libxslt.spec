@@ -6,16 +6,17 @@ Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	1481b9a2e50d87cd0d738224c6f3f883
+# Source0-md5:	485a2ea1fda06e0dc3b036375673f6e2
+Patch0:		%{name}-am18.patch
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	libtool >= 1:1.4.2-9
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	python-devel
 BuildRequires:	python-libxml2 >= %{libxml2ver}
@@ -103,9 +104,9 @@ Modu³y jêzyka Python dla biblioteki libxslt.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -127,6 +128,8 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
+
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la,a}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
