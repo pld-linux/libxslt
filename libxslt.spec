@@ -46,8 +46,8 @@ Static libraries of libxslt - XSLT processor.
 
 %build
 libtoolize --copy --force
-autoconf
 aclocal
+autoconf
 automake -a -c
 %configure
 %{__make}
