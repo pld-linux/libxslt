@@ -1,7 +1,7 @@
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Name:		libxslt
-Version:	0.8.0
+Version:	0.9.0
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -11,8 +11,8 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/libxslt/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.3.7
-BuildRequires:	libxml2-devel >= 2.3.7
+Requires:	libxml2 >= 2.3.8
+BuildRequires:	libxml2-devel >= 2.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
