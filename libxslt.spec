@@ -1,17 +1,18 @@
 %include	/usr/lib/rpm/macros.python
 
-%define		libxml2ver	2.6.7
+%define		libxml2ver	2.6.8
 
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	1fcbbb28a34b83c0ea18147574b011a0
+Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
+# Source0-md5:	37625f01452884aac4bdef79a1dae1a6
+#Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf
 BuildRequires:	automake
