@@ -121,7 +121,7 @@ Group(ja):	Ё╚х╞/╦ю╦Л/Python
 Group(pl):	Programowanie/JЙzyki/Python
 Group(pt):	Desenvolvimento/Linguagens/Python
 Group(ru):	Разработка/Языки/Python
-Requires:	python-libxml2 = %{lver}
+Requires:	python-libxml2 = %{libxml2ver}
 %requires_eq	python
 
 %description -n python-%{name}
