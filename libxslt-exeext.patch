@@ -1,12 +1,12 @@
-diff -Nur libxslt-1.0.12.orig/python/Makefile.am libxslt-1.0.12/python/Makefile.am
---- libxslt-1.0.12.orig/python/Makefile.am	Sun Feb 10 04:55:08 2002
-+++ libxslt-1.0.12/python/Makefile.am	Thu Mar  7 14:26:13 2002
-@@ -41,7 +41,7 @@
- noinst_LTLIBRARIES = libxsltmodule.la
- libxsltmodule_la_SOURCES = libxslt.c types.c libxslt-py.c
+diff -Nur libxslt-1.0.13.orig/python/Makefile.am libxslt-1.0.13/python/Makefile.am
+--- libxslt-1.0.13.orig/python/Makefile.am	Fri Mar  8 17:52:56 2002
++++ libxslt-1.0.13/python/Makefile.am	Fri Mar  8 22:53:32 2002
+@@ -48,7 +48,7 @@
  
--libxsltmod.so: $(libxsltmodule_la_OBJECTS)
-+libxsltmod.so$(EXEEXT): $(libxsltmodule_la_OBJECTS)
- 	-@rm -f .libs/libxsltmod.so
- 	$(LINK) -o $@ $(libxsltmodule_la_OBJECTS) $(libxsltmod_so_LDFLAGS)
- 	-@(if [ -r .libs/libxsltmod.so ] ; then cp .libs/libxsltmod.so . ; fi)
+ all: $(GENERATED) libxsltmod.so libxslt.py $(PYTHONSODV)
+ 
+-libxsltmod.so: $(libxsltmodule_la_OBJECTS) libxsltmodule.la
++libxsltmod.so$(EXEEXT): $(libxsltmodule_la_OBJECTS) libxsltmodule.la
+ 	-(rm -f .libs/libxsltmod.so; \
+ 	  $(LINK) -o $@ $(libxsltmodule_la_OBJECTS) $(libxsltmod_so_LDFLAGS);\
+ 	  if [ -r .libs/libxsltmod.so ] ; then cp .libs/libxsltmod.so . ; fi)
