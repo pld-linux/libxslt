@@ -4,7 +4,7 @@
 
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
-Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
+Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.0.32
 Release:	1
@@ -40,7 +40,7 @@ linha de comandos para o mecanismo XSLT.
 %package devel
 Summary:	Header files for libxslt
 Summary(pl):	Pliki nag³ówkowe libxslt
-Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
+Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Obsoletes:	libxslt1-devel
@@ -59,7 +59,7 @@ transformação dos estilos XSLT.
 %package static
 Summary:	Static libraries of libxslt
 Summary(pl):	Biblioteki statyczne libxslt
-Summary(pt_BR):	Bibliotecas estáticas para incluir o mecanismo XSLT do Gnome
+Summary(pt_BR):	Bibliotecas estáticas para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
