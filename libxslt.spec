@@ -19,6 +19,7 @@ BuildRequires:	libgcrypt-devel >= 1.1.42
 BuildRequires:	libtool >= 1:1.4.2-9
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	perl-base
+BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-libxml2 >= %{libxml2ver}
 Requires:	libgcrypt >= 1.1.42
