@@ -14,7 +14,7 @@ Group(pt_BR):	Bibliotecas
 Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
-Patch0:		%{name}-noext.patch
+Patch0:		%{name}-no_debuger.patch
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= 2.4.10
 BuildRequires:	autoconf
