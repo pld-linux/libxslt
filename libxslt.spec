@@ -6,7 +6,7 @@ Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
-Version:	1.0.29
+Version:	1.0.30
 Release:	1
 License:	MIT
 Group:		Libraries
@@ -118,8 +118,7 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT 
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
@@ -132,7 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README ChangeLog TODO doc/{*.{gif,html},html/*}
+%doc README ChangeLog TODO doc/{*.{gif,html},html}
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
