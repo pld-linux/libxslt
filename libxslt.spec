@@ -1,16 +1,16 @@
 
-%define		libxml2ver	1:2.6.15
+%define		libxml2ver	1:2.6.17
 
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.12
-Release:	2
+Version:	1.1.13
+Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
-# Source0-md5:	cf82a767c016ff1668d1c295c47ae700
+# Source0-md5:	7429552e61fc0d72836fd33700fd2346
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf
 BuildRequires:	automake
