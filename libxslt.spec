@@ -11,8 +11,8 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/libxslt/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.3.8
-BuildRequires:	libxml2-devel >= 2.3.8
+Requires:	libxml2 >= 2.3.10
+BuildRequires:	libxml2-devel >= 2.3.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
