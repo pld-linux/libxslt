@@ -1,20 +1,21 @@
---- libxslt-1.0.21/python/Makefile.am.orig	Fri Sep  6 04:55:29 2002
-+++ libxslt-1.0.21/python/Makefile.am	Mon Sep 30 03:13:39 2002
+diff -urN libxslt-1.0.31.orig/python/Makefile.am libxslt-1.0.31/python/Makefile.am
+--- libxslt-1.0.31.orig/python/Makefile.am	Mon Jul  7 09:38:18 2003
++++ libxslt-1.0.31/python/Makefile.am	Mon Jul  7 09:39:02 2003
 @@ -34,6 +34,7 @@
+ all-local: libxslt.py
  
- pythondir = $(libdir)/python${PYTHON_VERSION}/site-packages
  python_LTLIBRARIES = libxsltmod.la
 +python_DATA = libxslt.py
  
  libxsltmod_la_SOURCES = libxslt.c types.c libxslt-py.c
  libxsltmod_la_LIBADD = $(mylibs) 
 @@ -41,13 +42,6 @@
- libxslt.py: $(srcdir)/libxsl.py libxsltclass.py
- 	cat $(srcdir)/libxsl.py libxsltclass.py > libxslt.py
+ libxslt.py: $(srcdir)/libxsl.py $(srcdir)/libxsltclass.py
+ 	cat $(srcdir)/libxsl.py $(srcdir)/libxsltclass.py > libxslt.py
  
 -install-data-local:
--	$(mkinstalldirs) $(DESTDIR)$(libdir)/python${PYTHON_VERSION}/site-packages
--	@INSTALL@ -m 0644 libxslt.py $(DESTDIR)$(libdir)/python${PYTHON_VERSION}/site-packages
+-	$(mkinstalldirs) $(DESTDIR)$(pythondir)
+-	@INSTALL@ -m 0644 libxslt.py $(DESTDIR)$(pythondir)
 -	$(mkinstalldirs) $(DESTDIR)$(DOCS_DIR)
 -	@(for doc in $(DOCS) ; \
 -	   do @INSTALL@ -m 0644 $$doc $(DESTDIR)$(DOCS_DIR) ; done)
