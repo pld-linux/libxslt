@@ -1,7 +1,7 @@
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Name:		libxslt
-Version:	0.10.0
+Version:	0.11.0
 Release:	1
 License:	GPL
 Group:		Libraries
