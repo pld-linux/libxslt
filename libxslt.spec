@@ -18,8 +18,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= %{libxml2ver}
-BuildRequires:	python-libxml2 >= %{libxml2ver}
 BuildRequires:	python-devel
+BuildRequires:	python-libxml2 >= %{libxml2ver}
 BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libxslt1
@@ -37,18 +37,18 @@ transformação dos estilos XSLT. O comando xsltproc é uma interface em
 linha de comandos para o mecanismo XSLT.
 
 %package devel
-Summary:	Development libraries and header files of libxslt
-Summary(pl):	Biblioteki i pliki nag³ównkowe libxslt
+Summary:	Header files for libxslt
+Summary(pl):	Pliki nag³ówkowe libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Obsoletes:	libxslt1-devel
 
 %description devel
-Development libraries and header files of libxslt - XSLT processor.
+Header files for libxslt - XSLT processor.
 
 %description devel -l pl
-Pliki nag³ówkowe i biblioteki developerskie procesora XSLT.
+Pliki nag³ówkowe procesora XSLT.
 
 %description devel -l pt_BR
 Esta biblioteca C permite a transformação de arquivos XML em outros
