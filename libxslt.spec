@@ -25,15 +25,18 @@ URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= %{libxml2ver}
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	python-libxml2 >= %{libxml2ver}
-BuildRequires:	libtool
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Library for XSLT processing.
+
+%description -l pl
+Biblioteka do przetwarzania XSLT.
 
 %description -l pt_BR
 Esta biblioteca C permite a transformação de arquivos XML em outros
@@ -60,7 +63,10 @@ Requires:	%{name} = %{version}
 %description devel
 Development libraries and header files of libxslt - XSLT processor.
 
-%description -l pt_BR devel
+%description devel -l pl
+Pliki nag³ówkowe i biblioteki developerskie procesora XSLT.
+
+%description devel -l pt_BR
 Esta biblioteca C permite a transformação de arquivos XML em outros
 arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
 transformação dos estilos XSLT.
@@ -84,7 +90,10 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static libraries of libxslt - XSLT processor.
 
-%description -l pt_BR static
+%description static -l pl
+Statyczne biblioteki procesora XSLT.
+
+%description static -l pt_BR
 Esta biblioteca C permite a transformação de arquivos XML em outros
 arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
 transformação dos estilos XSLT. Estas são as bibliotecas em sua versão
@@ -107,7 +116,7 @@ Requires:	%{name} = %{version}
 %description progs
 XSLT processor.
 
-%description -l pl progs
+%description progs -l pl
 Procesor XSLT.
 
 %package -n python-%{name}
@@ -132,7 +141,7 @@ Python support for libxslt.
 Modu³y jêzyka Python dla biblioteki libxslt.
 
 %prep
-%setup  -q
+%setup -q
 
 %build
 rm -f missing
@@ -156,7 +165,7 @@ gzip -9nf README ChangeLog TODO
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
+%post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
