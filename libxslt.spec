@@ -1,7 +1,7 @@
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Name:		libxslt
-Version:	1.0.0
+Version:	1.0.1
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -11,7 +11,7 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.4.0
+Requires:	libxml2 >= 2.4.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libxml2-devel >= 2.4.0
@@ -41,6 +41,21 @@ Group(pl):	Programowanie/Biblioteki
 %description static
 Static libraries of libxslt - XSLT processor.
 
+%package progs
+Summary:	XSLT processor
+Summary(pl):	Procesor styli XSLT
+Group:		Applications/Text
+Group(de):	Applikationen/Text
+Group(fr):	Development/Librairies
+Group(pl):	Aplikacje/Tekst
+Requires:	%{name} = %{version}
+
+%description progs
+XSLT processor.
+
+%description -l pl progs
+Procesor styli XSLT.
+
 %prep
 %setup  -q
 
@@ -68,7 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz doc/{*.{gif,html},html/*}
-%attr(755,root,root) %{_bindir}/xsltproc
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
@@ -82,3 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+
+%files progs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/xsltproc
