@@ -2,7 +2,7 @@ Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Name:		libxslt
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Group(de):	Libraries
@@ -34,6 +34,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:       %{name} = %{version}
 
 %description devel
 Development libraries and header files of libxslt - XSLT processor.
@@ -48,6 +49,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:       %{name}-devel = %{version}
 
 %description static
 Static libraries of libxslt - XSLT processor.
