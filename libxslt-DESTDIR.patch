@@ -1,5 +1,5 @@
---- libxslt-1.0.20/python/Makefile.am~	Sat Aug 24 17:43:50 2002
-+++ libxslt-1.0.20/python/Makefile.am	Sat Aug 24 17:43:50 2002
+--- libxslt-1.0.21/python/Makefile.am.orig	Fri Sep  6 04:55:29 2002
++++ libxslt-1.0.21/pythonMakefile.am	Mon Sep 30 03:13:39 2002
 @@ -34,6 +34,7 @@
  
  pythondir = $(libdir)/python${PYTHON_VERSION}/site-packages
@@ -13,11 +13,11 @@
  	cat $(srcdir)/libxsl.py libxsltclass.py > libxslt.py
  
 -install-data-local:
--	$(mkinstalldirs) $(libdir)/python${PYTHON_VERSION}/site-packages
--	@INSTALL@ -m 0644 libxslt.py $(libdir)/python${PYTHON_VERSION}/site-packages
--	$(mkinstalldirs) $(DOCS_DIR)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)/python${PYTHON_VERSION}/site-packages
+-	@INSTALL@ -m 0644 libxslt.py $(DESTDIR)$(libdir)/python${PYTHON_VERSION}/site-packages
+-	$(mkinstalldirs) $(DESTDIR)$(DOCS_DIR)
 -	@(for doc in $(DOCS) ; \
--	   do @INSTALL@ -m 0644 $$doc $(DOCS_DIR) ; done)
+-	   do @INSTALL@ -m 0644 $$doc $(DESTDIR)$(DOCS_DIR) ; done)
 -
  GENERATE = generator.py
  API_DESC = $(top_srcdir)/doc/libxslt-api.xml $(srcdir)/libxslt-python-api.xml
