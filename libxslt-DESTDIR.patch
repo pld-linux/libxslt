@@ -1,5 +1,5 @@
 --- libxslt-1.0.21/python/Makefile.am.orig	Fri Sep  6 04:55:29 2002
-+++ libxslt-1.0.21/pythonMakefile.am	Mon Sep 30 03:13:39 2002
++++ libxslt-1.0.21/python/Makefile.am	Mon Sep 30 03:13:39 2002
 @@ -34,6 +34,7 @@
  
  pythondir = $(libdir)/python${PYTHON_VERSION}/site-packages
