@@ -1,0 +1,12 @@
+diff -Nur libxslt-1.0.12.orig/python/Makefile.am libxslt-1.0.12/python/Makefile.am
+--- libxslt-1.0.12.orig/python/Makefile.am	Sun Feb 10 04:55:08 2002
++++ libxslt-1.0.12/python/Makefile.am	Thu Mar  7 14:26:13 2002
+@@ -41,7 +41,7 @@
+ noinst_LTLIBRARIES = libxsltmodule.la
+ libxsltmodule_la_SOURCES = libxslt.c types.c libxslt-py.c
+ 
+-libxsltmod.so: $(libxsltmodule_la_OBJECTS)
++libxsltmod.so$(EXEEXT): $(libxsltmodule_la_OBJECTS)
+ 	-@rm -f .libs/libxsltmod.so
+ 	$(LINK) -o $@ $(libxsltmodule_la_OBJECTS) $(libxsltmod_so_LDFLAGS)
+ 	-@(if [ -r .libs/libxsltmod.so ] ; then cp .libs/libxsltmod.so . ; fi)
