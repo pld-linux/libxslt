@@ -10,16 +10,6 @@ Version:	1.0.11
 Release:	1
 License:	MIT
 Group:		Libraries
-Group(cs):	Knihovny
-Group(de):	Bibliotheken
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(ja):	╔И╔╓╔ж╔И╔Й
-Group(pl):	Biblioteki
-Group(pt):	Bibliotecas
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= %{libxml2ver}
@@ -48,16 +38,6 @@ linha de comandos para o mecanismo XSLT.
 Summary:	Development libraries and header files of libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
-Group(cs):	VЩvojovИ prostЬedky/Knihovny
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(pt):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -75,16 +55,6 @@ transformaГЦo dos estilos XSLT.
 Summary:	Static libraries of libxslt
 Summary(pt_BR):	Bibliotecas estАticas para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
-Group(cs):	VЩvojovИ prostЬedky/Knihovny
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(pt):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -103,14 +73,6 @@ estАtica.
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Group:		Applications/Text
-Group(cs):	Aplikace/Text
-Group(de):	Anwendungen/Text
-Group(es):	Aplicaciones/Texto
-Group(fr):	Applications/Texte
-Group(ja):	╔╒╔в╔Й╔╠║╪╔╥╔Г╔С/╔ф╔╜╔╧╔х
-Group(pl):	Aplikacje/Tekst
-Group(pt):	AplicaГУes/Texto
-Group(ru):	Приложения/Работа с текстами
 Requires:	%{name} = %{version}
 
 %description progs
@@ -123,14 +85,6 @@ Procesor XSLT.
 Summary:	Python support for libxslt
 Summary(pl):	ModuЁy jЙzyka Python dla biblioteki libxslt
 Group:		Development/Languages/Python
-Group(cs):	VЩvojovИ prostЬedky/ProgramovacМ jazyky/Python
-Group(de):	Entwicklung/Sprachen/Python
-Group(es):	Desarrollo/Lenguajes/Python
-Group(fr):	Development/Langues/Python
-Group(ja):	Ё╚х╞/╦ю╦Л/Python
-Group(pl):	Programowanie/JЙzyki/Python
-Group(pt):	Desenvolvimento/Linguagens/Python
-Group(ru):	Разработка/Языки/Python
 Requires:	python-libxml2 = %{libxml2ver}
 %requires_eq	python
 
