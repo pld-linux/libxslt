@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.python
 
-%define		libxml2ver	2.4.24
+%define		libxml2ver	2.4.25
 
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
