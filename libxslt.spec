@@ -11,6 +11,7 @@ Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= %{libxml2ver}
 BuildRequires:	autoconf
@@ -100,6 +101,7 @@ Modu³y jêzyka Python dla biblioteki libxslt.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
