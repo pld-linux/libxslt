@@ -29,6 +29,7 @@ BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	python-libxml2 >= %{libxml2ver}
 BuildRequires:	libtool
 BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
