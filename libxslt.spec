@@ -10,9 +10,8 @@ Version:	1.1.6
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
-# Source0-md5:	9c5c7d8a0c171dd61725cf02a6c476ca
-#Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libxslt/1.1/%{name}-%{version}.tar.bz2
+# Source0-md5:	8e90ee0c7fc95a36ca91365739509a5c
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf
 BuildRequires:	automake
