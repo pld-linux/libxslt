@@ -11,10 +11,10 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.4.2
+Requires:	libxml2 >= 2.4.3
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel >= 2.4.2
+BuildRequires:	libxml2-devel >= 2.4.3
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
