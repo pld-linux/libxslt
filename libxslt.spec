@@ -2,13 +2,16 @@ Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Name:		libxslt
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= 2.4.3
@@ -25,8 +28,12 @@ Library for XSLT processing.
 Summary:	Development libraries and header files of libxslt
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 
 %description devel
 Development libraries and header files of libxslt - XSLT processor.
@@ -35,8 +42,12 @@ Development libraries and header files of libxslt - XSLT processor.
 Summary:	Static libraries of libxslt
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 
 %description static
 Static libraries of libxslt - XSLT processor.
@@ -60,6 +71,7 @@ Procesor XSLT.
 %setup  -q
 
 %build
+rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
