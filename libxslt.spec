@@ -7,7 +7,7 @@ Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
 Version:	1.0.13
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
@@ -85,7 +85,7 @@ Procesor XSLT.
 %package -n python-%{name}
 Summary:	Python support for libxslt
 Summary(pl):	Modu³y jêzyka Python dla biblioteki libxslt
-Group:		Development/Languages/Python
+Group:		Libraries/Python
 Requires:	python-libxml2 = %{libxml2ver}
 %requires_eq	python
 
