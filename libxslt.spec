@@ -21,6 +21,7 @@ BuildRequires:	perl-base
 BuildRequires:	python-devel
 BuildRequires:	python-libxml2 >= %{libxml2ver}
 BuildRequires:	rpm-pythonprov
+Requires:	libgcrypt >= 1.1.42
 Requires:	libxml2 >= %{libxml2ver}
 Obsoletes:	libxslt1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,6 +44,7 @@ Summary(pl):	Pliki nag³ówkowe libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libgcrypt-devel >= 1.1.42
 Requires:	libxml2-devel >= %{libxml2ver}
 Obsoletes:	libxslt1-devel
 
