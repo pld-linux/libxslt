@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 
 %define		libxml2ver	2.6.11
 
