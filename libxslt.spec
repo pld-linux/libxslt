@@ -1,25 +1,34 @@
+
+%include	/usr/lib/rpm/macros.python
+
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
-Version:	1.0.10
+Version:	1.0.11
 Release:	1
-License:	GPL
+License:	MIT
 Group:		Libraries
-Group(de):	Libraries
+Group(cs):	Knihovny
+Group(de):	Bibliotheken
 Group(es):	Bibliotecas
 Group(fr):	Librairies
+Group(ja):	╔И╔╓╔ж╔И╔Й
 Group(pl):	Biblioteki
+Group(pt):	Bibliotecas
 Group(pt_BR):	Bibliotecas
 Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.4.13
+Requires:	libxml2 >= 2.4.14
+Requires:	python-libxml2 >= 2.4.14
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel >= 2.4.13
+BuildRequires:	libxml2-devel >= 2.4.14
+BuildRequires:	python-libxml2 >= 2.4.14
 BuildRequires:	libtool
+BuildRequires:	python-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,11 +44,14 @@ linha de comandos para o mecanismo XSLT.
 Summary:	Development libraries and header files of libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(cs):	VЩvojovИ prostЬedky/Knihovny
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
@@ -56,11 +68,14 @@ transformaГЦo dos estilos XSLT.
 Summary:	Static libraries of libxslt
 Summary(pt_BR):	Bibliotecas estАticas para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(cs):	VЩvojovИ prostЬedky/Knihovny
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
@@ -78,9 +93,14 @@ estАtica.
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Development/Librairies
+Group(cs):	Aplikace/Text
+Group(de):	Anwendungen/Text
+Group(es):	Aplicaciones/Texto
+Group(fr):	Applications/Texte
+Group(ja):	╔╒╔в╔Й╔╠║╪╔╥╔Г╔С/╔ф╔╜╔╧╔х
 Group(pl):	Aplikacje/Tekst
+Group(pt):	AplicaГУes/Texto
+Group(ru):	Приложения/Работа с текстами
 Requires:	%{name} = %{version}
 
 %description progs
@@ -88,6 +108,26 @@ XSLT processor.
 
 %description -l pl progs
 Procesor XSLT.
+
+%package -n python-%{name}
+Summary:	Python support for libxslt
+Summary(pl):	ModuЁy jЙzyka Python dla biblioteki libxslt
+Group:		Development/Languages/Python
+Group(cs):	VЩvojovИ prostЬedky/ProgramovacМ jazyky/Python
+Group(de):	Entwicklung/Sprachen/Python
+Group(es):	Desarrollo/Lenguajes/Python
+Group(fr):	Development/Langues/Python
+Group(ja):	Ё╚х╞/╦ю╦Л/Python
+Group(pl):	Programowanie/JЙzyki/Python
+Group(pt):	Desenvolvimento/Linguagens/Python
+Group(ru):	Разработка/Языки/Python
+%requires_eq	python
+
+%description -n python-%{name}
+Python support for libxslt.
+
+%description -n python-%{name} -l pl
+ModuЁy jЙzyka Python dla biblioteki libxslt.
 
 %prep
 %setup  -q
@@ -105,6 +145,9 @@ automake -a -c
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_comp $RPM_BUILD_ROOT%{py_sitedir}
 
 gzip -9nf README ChangeLog TODO
 
@@ -134,3 +177,8 @@ rm -rf $RPM_BUILD_ROOT
 %files progs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xsltproc
+
+%files -n python-%{name}
+%defattr(644,root,root,755)
+%attr(755,root,root) %{py_sitedir}/*.so
+%{py_sitedir}/*.py[co]
