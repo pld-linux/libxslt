@@ -120,11 +120,10 @@ rm -rf $RPM_BUILD_ROOT
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
+%post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
