@@ -169,6 +169,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/libxslt
+%{_includedir}/libexslt
 
 %files static
 %defattr(644,root,root,755)
