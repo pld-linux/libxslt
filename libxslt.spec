@@ -14,7 +14,7 @@ URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= 2.4.1
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel >= 2.4.0
+BuildRequires:	libxml2-devel >= 2.4.1
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
