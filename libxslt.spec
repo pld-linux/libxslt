@@ -109,7 +109,9 @@ automake -a -c -f
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkgconfigdir=%{_pkgconfigdir}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
@@ -135,6 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/libxslt
 %{_includedir}/libexslt
+%{_pkgconfigdir}/*.pc
 
 %files static
 %defattr(644,root,root,755)
