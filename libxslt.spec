@@ -11,6 +11,7 @@ Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
+# Source0-md5: fb573ca4cd26303cd98d5396b0bb889e
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= %{libxml2ver}
