@@ -1,7 +1,6 @@
-
 %include	/usr/lib/rpm/macros.python
 
-%define lver 2.4.14
+%define		libxml2ver	2.4.14
 
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
@@ -23,11 +22,11 @@ Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= %{lver}
+Requires:	libxml2 >= %{libxml2ver}
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel >= %{lver}
-BuildRequires:	python-libxml2 >= %{lver}
+BuildRequires:	libxml2-devel >= %{libxml2ver}
+BuildRequires:	python-libxml2 >= %{libxml2ver}
 BuildRequires:	libtool
 BuildRequires:	python-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
