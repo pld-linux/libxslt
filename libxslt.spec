@@ -1,6 +1,8 @@
 
 %include	/usr/lib/rpm/macros.python
 
+%define lver 2.4.14
+
 Summary:	XSLT processor
 Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
@@ -21,12 +23,11 @@ Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
 URL:		http://xmlsoft.org/XSLT/
-Requires:	libxml2 >= 2.4.14
-Requires:	python-libxml2 >= 2.4.14
+Requires:	libxml2 >= %{lver}
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel >= 2.4.14
-BuildRequires:	python-libxml2 >= 2.4.14
+BuildRequires:	libxml2-devel >= %{lver}
+BuildRequires:	python-libxml2 >= %{lver}
 BuildRequires:	libtool
 BuildRequires:	python-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -121,6 +122,7 @@ Group(ja):	Ё╚х╞/╦ю╦Л/Python
 Group(pl):	Programowanie/JЙzyki/Python
 Group(pt):	Desenvolvimento/Linguagens/Python
 Group(ru):	Разработка/Языки/Python
+Requires:	python-libxml2 = %{lver}
 %requires_eq	python
 
 %description -n python-%{name}
