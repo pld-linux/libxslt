@@ -1,0 +1,24 @@
+--- libxslt-1.0.20/python/Makefile.am~	Sat Aug 24 17:43:50 2002
++++ libxslt-1.0.20/python/Makefile.am	Sat Aug 24 17:43:50 2002
+@@ -34,6 +34,7 @@
+ 
+ pythondir = $(libdir)/python${PYTHON_VERSION}/site-packages
+ python_LTLIBRARIES = libxsltmod.la
++python_DATA = libxslt.py
+ 
+ libxsltmod_la_SOURCES = libxslt.c types.c libxslt-py.c
+ libxsltmod_la_LIBADD = $(mylibs) 
+@@ -41,13 +42,6 @@
+ libxslt.py: $(srcdir)/libxsl.py libxsltclass.py
+ 	cat $(srcdir)/libxsl.py libxsltclass.py > libxslt.py
+ 
+-install-data-local:
+-	$(mkinstalldirs) $(libdir)/python${PYTHON_VERSION}/site-packages
+-	@INSTALL@ -m 0644 libxslt.py $(libdir)/python${PYTHON_VERSION}/site-packages
+-	$(mkinstalldirs) $(DOCS_DIR)
+-	@(for doc in $(DOCS) ; \
+-	   do @INSTALL@ -m 0644 $$doc $(DOCS_DIR) ; done)
+-
+ GENERATE = generator.py
+ API_DESC = $(top_srcdir)/doc/libxslt-api.xml $(srcdir)/libxslt-python-api.xml
+ GENERATED= $(srcdir)/libxsltclass.py \
