@@ -119,7 +119,7 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
+	DESTDIR=$RPM_BUILD_ROOT
 
 # move examples to proper dir
 install -d $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
