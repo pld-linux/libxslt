@@ -106,7 +106,7 @@ Modu³y jêzyka Python dla biblioteki libxslt.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
