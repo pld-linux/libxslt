@@ -143,6 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libexslt
 %{_mandir}/man4/*
 %{_pkgconfigdir}/*.pc
+%{_aclocaldir}/*.m4
 
 %files static
 %defattr(644,root,root,755)
@@ -157,3 +158,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/*.so
 %{py_sitedir}/*.py[co]
+%{_docdir}/*
