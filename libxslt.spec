@@ -38,6 +38,7 @@ linha de comandos para o mecanismo XSLT.
 
 %package devel
 Summary:	Development libraries and header files of libxslt
+Summary(pl):	Biblioteki i pliki nag³ównkowe libxslt
 Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
@@ -56,6 +57,7 @@ transformação dos estilos XSLT.
 
 %package static
 Summary:	Static libraries of libxslt
+Summary(pl):	Biblioteki statyczne libxslt
 Summary(pt_BR):	Bibliotecas estáticas para incluir o mecanismo XSLT do Gnome
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
