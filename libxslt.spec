@@ -7,7 +7,7 @@ Summary(pl):	Procesor XSLT
 Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do Gnome
 Name:		libxslt
 Version:	1.0.31
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
@@ -121,6 +121,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT 
 
+# move examples to proper dir
+install -d $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
+mv $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}/examples/* \
+  $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
+rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
+
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 
@@ -159,5 +165,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n python-%{name}
 %defattr(644,root,root,755)
+%doc %{_examplesdir}/python-%{name}-%{version}
 %attr(755,root,root) %{py_sitedir}/*.so
 %{py_sitedir}/*.py[co]
