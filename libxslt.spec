@@ -43,7 +43,7 @@ Static libraries of libxslt - XSLT processor.
 
 %package progs
 Summary:	XSLT processor
-Summary(pl):	Procesor styli XSLT
+Summary(pl):	Procesor XSLT
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Development/Librairies
@@ -54,7 +54,7 @@ Requires:	%{name} = %{version}
 XSLT processor.
 
 %description -l pl progs
-Procesor styli XSLT.
+Procesor XSLT.
 
 %prep
 %setup  -q
