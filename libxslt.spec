@@ -10,7 +10,8 @@ Version:	1.0.21
 Release:	2
 License:	MIT
 Group:		Libraries
-Source0:	ftp://xmlsoft.org/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libxslt/1.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	26ce0d132cea8d3beceb6ff7bab3b107
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://xmlsoft.org/XSLT/
 Requires:	libxml2 >= %{libxml2ver}
