@@ -1,0 +1,8 @@
+diff -Nur libxslt-1.0.6.orig/xsltproc/Makefile.am libxslt-1.0.6/xsltproc/Makefile.am
+--- libxslt-1.0.6.orig/xsltproc/Makefile.am	Wed Oct 17 04:55:07 2001
++++ libxslt-1.0.6/xsltproc/Makefile.am	Tue Oct 30 19:49:01 2001
+@@ -1,3 +1,4 @@
++AUTOMAKE_OPTIONS=no-exeext
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/libxslt -I$(top_srcdir)/libexslt \
+            -I$(top_builddir) -I$(top_builddir)/libxslt \
+ 	   -I$(top_builddir)/libexslt $(LIBXML_CFLAGS) $(CFLAGS)
