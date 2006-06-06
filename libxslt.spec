@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
+%bcond_with	tests		# run test suite
 #
 %define		libxml2ver	1:2.6.21
 
@@ -123,6 +124,8 @@ Modu³y jêzyka Python dla biblioteki libxslt.
 %configure \
 	%{!?with_static_libs:--disable-static}
 %{__make}
+
+%{?with_tests:%{__make} -C tests test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
