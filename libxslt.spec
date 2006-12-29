@@ -1,5 +1,6 @@
 #
 # Conditional build:
+%bcond_without	python		# don't build python binding
 %bcond_without	static_libs	# don't build static library
 %bcond_with	tests		# run test suite
 #
@@ -23,9 +24,11 @@ BuildRequires:	libgcrypt-devel >= 1.1.42
 BuildRequires:	libtool >= 1:1.4.2-9
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	perl-base
+%if %{with python}
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-libxml2 >= %{libxml2ver}
+%endif
 BuildRequires:	rpm-pythonprov
 Requires:	libgcrypt >= 1.1.42
 Requires:	libxml2 >= %{libxml2ver}
@@ -122,7 +125,8 @@ Modu³y jêzyka Python dla biblioteki libxslt.
 %{__autoheader}
 %{__automake}
 %configure \
-	%{!?with_static_libs:--disable-static}
+	%{!?with_static_libs:--disable-static} \
+	%{!?with_python:--without-python}
 %{__make}
 
 %{?with_tests:%{__make} -C tests test}
@@ -133,6 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%if %{with python}
 # move examples to proper dir
 install -d $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
 mv $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}/examples/* \
@@ -143,6 +148,7 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la,a}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -180,8 +186,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xsltproc
 %{_mandir}/man1/*
 
+%if %{with python}
 %files -n python-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/*.so
 %{py_sitedir}/*.py[co]
 %{_examplesdir}/python-%{name}-%{version}
+%endif
