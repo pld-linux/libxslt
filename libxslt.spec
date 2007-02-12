@@ -7,8 +7,8 @@
 %define		libxml2ver	1:2.6.27
 
 Summary:	XSLT processor
-Summary(pl):	Procesor XSLT
-Summary(pt_BR):	Biblioteca que disponibiliza o sistema XSLT do GNOME
+Summary(pl.UTF-8):   Procesor XSLT
+Summary(pt_BR.UTF-8):   Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.1.20
 Release:	1
@@ -38,19 +38,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Library for XSLT processing.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka do przetwarzania XSLT.
 
-%description -l pt_BR
-Esta biblioteca C permite a transformação de arquivos XML em outros
-arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
-transformação dos estilos XSLT. O comando xsltproc é uma interface em
+%description -l pt_BR.UTF-8
+Esta biblioteca C permite a transformaÃ§Ã£o de arquivos XML em outros
+arquivos XML (ou HTML, texto, ...) usando o mecanismo padrÃ£o de
+transformaÃ§Ã£o dos estilos XSLT. O comando xsltproc Ã© uma interface em
 linha de comandos para o mecanismo XSLT.
 
 %package devel
 Summary:	Header files for libxslt
-Summary(pl):	Pliki nag³ówkowe libxslt
-Summary(pt_BR):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe libxslt
+Summary(pt_BR.UTF-8):   Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libgcrypt-devel >= 1.1.42
@@ -60,36 +60,36 @@ Obsoletes:	libxslt1-devel
 %description devel
 Header files for libxslt - XSLT processor.
 
-%description devel -l pl
-Pliki nag³ówkowe procesora XSLT.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe procesora XSLT.
 
-%description devel -l pt_BR
-Esta biblioteca C permite a transformação de arquivos XML em outros
-arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
-transformação dos estilos XSLT.
+%description devel -l pt_BR.UTF-8
+Esta biblioteca C permite a transformaÃ§Ã£o de arquivos XML em outros
+arquivos XML (ou HTML, texto, ...) usando o mecanismo padrÃ£o de
+transformaÃ§Ã£o dos estilos XSLT.
 
 %package static
 Summary:	Static libraries of libxslt
-Summary(pl):	Biblioteki statyczne libxslt
-Summary(pt_BR):	Bibliotecas estáticas para incluir o mecanismo XSLT do GNOME
+Summary(pl.UTF-8):   Biblioteki statyczne libxslt
+Summary(pt_BR.UTF-8):   Bibliotecas estÃ¡ticas para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries of libxslt - XSLT processor.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki procesora XSLT.
 
-%description static -l pt_BR
-Esta biblioteca C permite a transformação de arquivos XML em outros
-arquivos XML (ou HTML, texto, ...) usando o mecanismo padrão de
-transformação dos estilos XSLT. Estas são as bibliotecas em sua versão
-estática.
+%description static -l pt_BR.UTF-8
+Esta biblioteca C permite a transformaÃ§Ã£o de arquivos XML em outros
+arquivos XML (ou HTML, texto, ...) usando o mecanismo padrÃ£o de
+transformaÃ§Ã£o dos estilos XSLT. Estas sÃ£o as bibliotecas em sua versÃ£o
+estÃ¡tica.
 
 %package progs
 Summary:	XSLT processor
-Summary(pl):	Procesor XSLT
+Summary(pl.UTF-8):   Procesor XSLT
 Group:		Applications/Text
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libxslt-proc
@@ -97,12 +97,12 @@ Obsoletes:	libxslt-proc
 %description progs
 XSLT processor.
 
-%description progs -l pl
+%description progs -l pl.UTF-8
 Procesor XSLT.
 
 %package -n python-%{name}
 Summary:	Python support for libxslt
-Summary(pl):	Modu³y jêzyka Python dla biblioteki libxslt
+Summary(pl.UTF-8):   ModuÅ‚y jÄ™zyka Python dla biblioteki libxslt
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-libxml2 => %{libxml2ver}
@@ -112,8 +112,8 @@ Obsoletes:	libxslt-python
 %description -n python-%{name}
 Python support for libxslt.
 
-%description -n python-%{name} -l pl
-Modu³y jêzyka Python dla biblioteki libxslt.
+%description -n python-%{name} -l pl.UTF-8
+ModuÅ‚y jÄ™zyka Python dla biblioteki libxslt.
 
 %prep
 %setup -q
