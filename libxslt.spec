@@ -7,8 +7,8 @@
 %define		libxml2ver	1:2.6.27
 
 Summary:	XSLT processor
-Summary(pl.UTF-8):   Procesor XSLT
-Summary(pt_BR.UTF-8):   Biblioteca que disponibiliza o sistema XSLT do GNOME
+Summary(pl.UTF-8):	Procesor XSLT
+Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.1.20
 Release:	1
@@ -49,8 +49,8 @@ linha de comandos para o mecanismo XSLT.
 
 %package devel
 Summary:	Header files for libxslt
-Summary(pl.UTF-8):   Pliki nagłówkowe libxslt
-Summary(pt_BR.UTF-8):   Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
+Summary(pl.UTF-8):	Pliki nagłówkowe libxslt
+Summary(pt_BR.UTF-8):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libgcrypt-devel >= 1.1.42
@@ -70,8 +70,8 @@ transformação dos estilos XSLT.
 
 %package static
 Summary:	Static libraries of libxslt
-Summary(pl.UTF-8):   Biblioteki statyczne libxslt
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para incluir o mecanismo XSLT do GNOME
+Summary(pl.UTF-8):	Biblioteki statyczne libxslt
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -89,7 +89,7 @@ estática.
 
 %package progs
 Summary:	XSLT processor
-Summary(pl.UTF-8):   Procesor XSLT
+Summary(pl.UTF-8):	Procesor XSLT
 Group:		Applications/Text
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libxslt-proc
@@ -102,7 +102,7 @@ Procesor XSLT.
 
 %package -n python-%{name}
 Summary:	Python support for libxslt
-Summary(pl.UTF-8):   Moduły języka Python dla biblioteki libxslt
+Summary(pl.UTF-8):	Moduły języka Python dla biblioteki libxslt
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-libxml2 => %{libxml2ver}
