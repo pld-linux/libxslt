@@ -125,6 +125,7 @@ Moduły języka Python dla biblioteki libxslt.
 %{__autoheader}
 %{__automake}
 %configure \
+	--with-plugins \
 	%{!?with_static_libs:--disable-static} \
 	%{!?with_python:--without-python}
 %{__make}
