@@ -160,8 +160,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog Copyright FEATURES NEWS README TODO
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libexslt.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libexslt.so.0
+%attr(755,root,root) %{_libdir}/libxslt.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libxslt.so.1
 %dir %{_libdir}/libxslt-plugins
 
@@ -169,30 +170,35 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/{*.{gif,html},html}
 %attr(755,root,root) %{_bindir}/xslt-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/*.sh
-%{_includedir}/libxslt
+%attr(755,root,root) %{_libdir}/libexslt.so
+%attr(755,root,root) %{_libdir}/libxslt.so
+%{_libdir}/libexslt.la
+%{_libdir}/libxslt.la
+%attr(755,root,root) %{_libdir}/xsltConf.sh
 %{_includedir}/libexslt
-%{_mandir}/man3/*
-%{_pkgconfigdir}/*.pc
-%{_aclocaldir}/*.m4
+%{_includedir}/libxslt
+%{_mandir}/man3/libexslt.3*
+%{_mandir}/man3/libxslt.3*
+%{_pkgconfigdir}/libexslt.pc
+%{_pkgconfigdir}/libxslt.pc
+%{_aclocaldir}/libxslt.m4
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libexslt.a
+%{_libdir}/libxslt.a
 %endif
 
 %files progs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/xsltproc
-%{_mandir}/man1/*
+%{_mandir}/man1/xsltproc.1*
 
 %if %{with python}
 %files -n python-%{name}
 %defattr(644,root,root,755)
-%attr(755,root,root) %{py_sitedir}/*.so
-%{py_sitedir}/*.py[co]
+%attr(755,root,root) %{py_sitedir}/libxsltmod.so
+%{py_sitedir}/libxslt.py[co]
 %{_examplesdir}/python-%{name}-%{version}
 %endif
