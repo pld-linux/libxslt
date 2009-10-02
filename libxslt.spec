@@ -10,16 +10,14 @@ Summary:	XSLT processor
 Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.24
-Release:	4
+Version:	1.1.26
+Release:	1
 License:	MIT
 Group:		Libraries
 #Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxslt/1.1/%{name}-%{version}.tar.bz2
 Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
-# Source0-md5:	e83ec5d27fc4c10c6f612879bea9a153
-Patch0:		%{name}-exslt_crypt.patch
-Patch1:		%{name}-m4.patch
-Patch2:		%{name}-makefile.patch
+# Source0-md5:	e61d0364a30146aaa3001296f853b2b9
+Patch0:		%{name}-m4.patch
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -121,8 +119,6 @@ Moduły języka Python dla biblioteki libxslt.
 %prep
 %setup -q
 %patch0 -p0
-%patch1 -p0
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -183,11 +179,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/xsltConf.sh
 %{_includedir}/libexslt
 %{_includedir}/libxslt
-%{_mandir}/man3/libexslt.3*
-%{_mandir}/man3/libxslt.3*
 %{_pkgconfigdir}/libexslt.pc
 %{_pkgconfigdir}/libxslt.pc
 %{_aclocaldir}/libxslt.m4
+%{_mandir}/man3/libexslt.3*
+%{_mandir}/man3/libxslt.3*
 
 %if %{with static_libs}
 %files static
