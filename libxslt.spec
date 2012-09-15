@@ -19,10 +19,10 @@ Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
 # Source0-md5:	4d01ff464b9ea7236925a1adf147c7f8
 Patch0:		%{name}-m4.patch
 URL:		http://xmlsoft.org/XSLT/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	libgcrypt-devel >= 1.1.42
-BuildRequires:	libtool >= 1:1.4.2-9
+BuildRequires:	libtool >= 2:2.0
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	perl-base
 %if %{with python}
@@ -127,8 +127,9 @@ Moduły języka Python dla biblioteki libxslt.
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-plugins \
+	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static} \
+	--with-plugins \
 	%{!?with_python:--without-python}
 %{__make}
 
