@@ -150,9 +150,11 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
-
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la,a}
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la,a}
 %endif
+
+# packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
