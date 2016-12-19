@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.1.29
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 #Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxslt/1.1/%{name}-%{version}.tar.bz2
@@ -18,6 +18,7 @@ Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
 # Source0-md5:	a129d3c44c022de3b9dcf6d6f288d72e
 Patch0:		%{name}-m4.patch
 Patch1:		LFS.patch
+Patch2:		%{name}-libs-no-libdir.patch
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -120,6 +121,7 @@ Moduły języka Python dla biblioteki libxslt.
 %setup -q
 %patch0 -p0
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -145,9 +147,9 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python}
 # move examples to proper dir
 install -d $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
-mv $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}/examples/* \
-  $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
-rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
+%{__mv} $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}/examples/* \
+	$RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}

@@ -1,0 +1,11 @@
+--- libxslt-1.1.29/xslt-config.in.orig	2015-05-10 16:11:30.000000000 +0200
++++ libxslt-1.1.29/xslt-config.in	2016-12-19 19:54:09.672085004 +0100
+@@ -89,7 +89,7 @@
+     shift
+ done
+ 
+-the_libs="@XSLT_LIBDIR@ @XSLT_LIBS@ @EXTRA_LIBS@"
++the_libs="@XSLT_LIBS@ @EXTRA_LIBS@"
+ if test "$includedir" != "/usr/include"; then
+     the_flags="$the_flags -I$includedir `@XML_CONFIG@ --cflags`"
+ else
