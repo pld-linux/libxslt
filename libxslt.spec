@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.1.29
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries
 #Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxslt/1.1/%{name}-%{version}.tar.bz2
@@ -130,6 +130,7 @@ Moduły języka Python dla biblioteki libxslt.
 %{__autoheader}
 %{__automake}
 %configure \
+	ac_cv_header_xlocale_h=no \
 	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static} \
 	--with-plugins \
