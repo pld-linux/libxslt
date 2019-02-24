@@ -9,13 +9,12 @@ Summary:	XSLT processor
 Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.32
+Version:	1.1.33
 Release:	1
 License:	MIT
 Group:		Libraries
-#Source0:	http://ftp.gnome.org/pub/GNOME/sources/libxslt/1.1/%{name}-%{version}.tar.bz2
 Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
-# Source0-md5:	1fc72f98e98bf4443f1651165f3aa146
+# Source0-md5:	b3bd254a03e46d58f8ad1e4559cd2c2f
 Patch0:		%{name}-m4.patch
 Patch1:		LFS.patch
 Patch2:		%{name}-libs-no-libdir.patch
