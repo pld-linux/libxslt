@@ -1,11 +1,11 @@
---- libxslt-1.1.29/xslt-config.in.orig	2015-05-10 16:11:30.000000000 +0200
-+++ libxslt-1.1.29/xslt-config.in	2016-12-19 19:54:09.672085004 +0100
-@@ -89,7 +89,7 @@
-     shift
- done
+--- libxslt-1.1.34/xslt-config.in.orig	2019-10-23 19:36:39.000000000 +0200
++++ libxslt-1.1.34/xslt-config.in	2020-01-19 17:55:21.321737264 +0100
+@@ -88,7 +88,7 @@
+             libs="@XSLT_LIBS@ @XSLT_PRIVATE_LIBS@"
+         fi
  
--the_libs="@XSLT_LIBDIR@ @XSLT_LIBS@ @EXTRA_LIBS@"
-+the_libs="@XSLT_LIBS@ @EXTRA_LIBS@"
- if test "$includedir" != "/usr/include"; then
-     the_flags="$the_flags -I$includedir `@XML_CONFIG@ --cflags`"
- else
+-        if [ "@XSLT_LIBDIR@" != "-L/usr/lib" -a "@XSLT_LIBDIR@" != "-L/usr/lib64" ]; then
++        if [ "@XSLT_LIBDIR@" != "-L/usr/lib" -a "@XSLT_LIBDIR@" != "-L/usr/lib64" -a "@XSLT_LIBDIR@" != "-L/usr/libx32" ]; then
+             libs="@XSLT_LIBDIR@ $libs"
+         fi
+ 
