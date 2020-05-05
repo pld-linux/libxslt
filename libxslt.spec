@@ -153,7 +153,10 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
-%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la,a}
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la}
+%if %{with static_libs}
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.a
+%endif
 %endif
 
 # packaged as %doc
