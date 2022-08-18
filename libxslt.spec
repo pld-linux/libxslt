@@ -1,6 +1,7 @@
 #
 # Conditional build:
-%bcond_without	python		# Python binding
+%bcond_without	python2		# CPython 2.x module
+%bcond_without	python3		# CPython 3.x module
 %bcond_without	static_libs	# static library
 %bcond_with	tests		# test suite
 
@@ -27,10 +28,15 @@ BuildRequires:	libtool >= 2:2.0
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-%if %{with python}
-BuildRequires:	python
-BuildRequires:	python-devel
+%if %{with python2}
+BuildRequires:	python >= 2
+BuildRequires:	python-devel >= 2
 BuildRequires:	python-libxml2 >= %{libxml2ver}
+%endif
+%if %{with python3}
+BuildRequires:	python3 >= 1:3.2
+BuildRequires:	python3-devel >= 1:3.2
+BuildRequires:	python3-libxml2 >= %{libxml2ver}
 %endif
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
@@ -120,19 +126,33 @@ XSLT processor.
 Procesor XSLT.
 
 %package -n python-%{name}
-Summary:	Python support for libxslt
-Summary(pl.UTF-8):	Moduły języka Python dla biblioteki libxslt
+Summary:	Python 2 support for libxslt
+Summary(pl.UTF-8):	Moduły języka Python 2 dla biblioteki libxslt
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-libxml2 => %{libxml2ver}
-%pyrequires_eq	python-modules
-Obsoletes:	libxslt-python
+Requires:	python-libxml2 >= %{libxml2ver}
+Requires:	python-modules
+Obsoletes:	libxslt-python < 1.1
 
 %description -n python-%{name}
-Python support for libxslt.
+Python 2 support for libxslt.
 
 %description -n python-%{name} -l pl.UTF-8
-Moduły języka Python dla biblioteki libxslt.
+Moduły języka Python 2 dla biblioteki libxslt.
+
+%package -n python3-%{name}
+Summary:	Python 3 support for libxslt
+Summary(pl.UTF-8):	Moduły języka Python 3 dla biblioteki libxslt
+Group:		Libraries/Python
+Requires:	%{name} = %{version}-%{release}
+Requires:	python3-libxml2 >= %{libxml2ver}
+Requires:	python3-modules >= 1:3.2
+
+%description -n python3-%{name}
+Python 3 support for libxslt.
+
+%description -n python3-%{name} -l pl.UTF-8
+Moduły języka Python 3 dla biblioteki libxslt.
 
 %prep
 %setup -q
@@ -149,13 +169,31 @@ Moduły języka Python dla biblioteki libxslt.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure \
+
+%if %{with python3}
+install -d build-python3
+cd build-python3
+../%configure \
+	PYTHON=%{__python3} \
+	ac_cv_header_xlocale_h=no \
+	--disable-silent-rules \
+	--disable-static \
+	--with-html-subdir=libxslt \
+	--with-plugins
+
+%{__make}
+cd ..
+%endif
+
+install -d build
+cd build
+../%configure \
 	ac_cv_header_xlocale_h=no \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static} \
 	--with-html-subdir=libxslt \
 	--with-plugins \
-	%{!?with_python:--without-python}
+	%{!?with_python2:--without-python}
 %{__make}
 
 %{?with_tests:%{__make} -C tests test}
@@ -163,21 +201,26 @@ Moduły języka Python dla biblioteki libxslt.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%if %{with python3}
+%{__make} -C build-python3 install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	exampledir=%{_examplesdir}/python3-%{name}-%{version}
+
+%py3_comp $RPM_BUILD_ROOT%{py3_sitescriptdir}
+%py3_ocomp $RPM_BUILD_ROOT%{py3_sitescriptdir}
+%{__rm} $RPM_BUILD_ROOT%{py3_sitedir}/*.la
+%endif
+
+%{__make} -C build install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	exampledir=%{_examplesdir}/python-%{name}-%{version}
 
 # junk (files to configure libxslt itself, not cmake export files)
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/cmake/libxslt/{FindGcrypt,libxslt-config}.cmake
 
-%if %{with python}
-# move examples to proper dir
-install -d $RPM_BUILD_ROOT%{_examplesdir}
-%{__mv} $RPM_BUILD_ROOT%{_docdir}/%{name}/python/examples \
-	$RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
-rmdir $RPM_BUILD_ROOT%{_docdir}/%{name}/python
-
-%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%if %{with python2}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_postclean
 %{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.la
 %if %{with static_libs}
@@ -234,10 +277,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/xsltproc
 %{_mandir}/man1/xsltproc.1*
 
-%if %{with python}
+%if %{with python2}
 %files -n python-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/libxsltmod.so
 %{py_sitescriptdir}/libxslt.py[co]
 %{_examplesdir}/python-%{name}-%{version}
+%endif
+
+%if %{with python3}
+%files -n python3-%{name}
+%defattr(644,root,root,755)
+%attr(755,root,root) %{py3_sitedir}/libxsltmod.so
+%{py3_sitescriptdir}/libxslt.py
+%{py3_sitescriptdir}/__pycache__/libxslt.cpython-*.py[co]
+%{_examplesdir}/python3-%{name}-%{version}
 %endif
