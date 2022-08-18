@@ -1,31 +1,32 @@
 #
 # Conditional build:
-%bcond_without	python		# don't build python binding
-%bcond_without	static_libs	# don't build static library
-%bcond_with	tests		# run test suite
+%bcond_without	python		# Python binding
+%bcond_without	static_libs	# static library
+%bcond_with	tests		# test suite
 
 %define		libxml2ver	1:2.6.30
 Summary:	XSLT processor
 Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.35
+Version:	1.1.36
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
 Source0:	https://download.gnome.org/sources/libxslt/1.1/%{name}-%{version}.tar.xz
-# Source0-md5:	5b3a634b77effd8a6268c21173575053
+# Source0-md5:	ecf54ae636780d7983dd664b852e3212
 Patch0:		%{name}-m4.patch
 Patch1:		LFS.patch
 Patch2:		%{name}-libs-no-libdir.patch
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.15
 BuildRequires:	libgcrypt-devel >= 1.1.42
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	libxml2-devel >= %{libxml2ver}
 BuildRequires:	perl-base
+BuildRequires:	pkgconfig
 %if %{with python}
 BuildRequires:	python
 BuildRequires:	python-devel
@@ -151,7 +152,7 @@ Moduły języka Python dla biblioteki libxslt.
 %configure \
 	ac_cv_header_xlocale_h=no \
 	--disable-silent-rules \
-	%{!?with_static_libs:--disable-static} \
+	%{?with_static_libs:--enable-static} \
 	--with-html-subdir=libxslt \
 	--with-plugins \
 	%{!?with_python:--without-python}
@@ -171,13 +172,14 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python}
 # move examples to proper dir
 install -d $RPM_BUILD_ROOT%{_examplesdir}
-%{__mv} $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}/examples \
+%{__mv} $RPM_BUILD_ROOT%{_docdir}/%{name}/python/examples \
 	$RPM_BUILD_ROOT%{_examplesdir}/python-%{name}-%{version}
-rmdir $RPM_BUILD_ROOT%{_docdir}/%{name}-python-%{version}
+rmdir $RPM_BUILD_ROOT%{_docdir}/%{name}/python
 
-%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
-%py_comp $RPM_BUILD_ROOT%{py_sitedir}
-%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.{py,la}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_postclean
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.la
 %if %{with static_libs}
 %{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.a
 %endif
@@ -191,7 +193,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog Copyright FEATURES NEWS README TODO
+%doc AUTHORS Copyright FEATURES NEWS README TODO
 %attr(755,root,root) %{_libdir}/libexslt.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libexslt.so.0
 %attr(755,root,root) %{_libdir}/libxslt.so.*.*.*
@@ -200,7 +202,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/{*.{gif,html},html}
 %attr(755,root,root) %{_bindir}/xslt-config
 %attr(755,root,root) %{_libdir}/libexslt.so
 %attr(755,root,root) %{_libdir}/libxslt.so
@@ -237,6 +238,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-%{name}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/libxsltmod.so
-%{py_sitedir}/libxslt.py[co]
+%{py_sitescriptdir}/libxslt.py[co]
 %{_examplesdir}/python-%{name}-%{version}
 %endif
