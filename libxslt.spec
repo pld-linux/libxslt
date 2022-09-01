@@ -178,7 +178,6 @@ cd build-python3
 	ac_cv_header_xlocale_h=no \
 	--disable-silent-rules \
 	--disable-static \
-	--with-html-subdir=libxslt \
 	--with-plugins
 
 %{__make}
@@ -191,7 +190,6 @@ cd build
 	ac_cv_header_xlocale_h=no \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static} \
-	--with-html-subdir=libxslt \
 	--with-plugins \
 	%{!?with_python2:--without-python}
 %{__make}
