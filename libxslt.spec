@@ -32,11 +32,13 @@ BuildRequires:	pkgconfig
 BuildRequires:	python >= 2
 BuildRequires:	python-devel >= 2
 BuildRequires:	python-libxml2 >= %{libxml2ver}
+BuildRequires:	python-modules
 %endif
 %if %{with python3}
 BuildRequires:	python3 >= 1:3.2
 BuildRequires:	python3-devel >= 1:3.2
 BuildRequires:	python3-libxml2 >= %{libxml2ver}
+BuildRequires:	python3-modules
 %endif
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
