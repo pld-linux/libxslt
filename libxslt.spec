@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.1.40
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 #Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
@@ -189,6 +189,7 @@ cd ..
 install -d build
 cd build
 ../%configure \
+	PYTHON=%{__python} \
 	ac_cv_header_xlocale_h=no \
 	--disable-silent-rules \
 	%{?with_static_libs:--enable-static} \
