@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	python2		# CPython 2.x module
 %bcond_without	python3		# CPython 3.x module
-%bcond_without	static_libs	# static library
+%bcond_without	static_libs	# static libraries
 %bcond_with	tests		# test suite
 
 %define		libxml2ver	1:2.6.30
@@ -10,13 +10,13 @@ Summary:	XSLT processor
 Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.39
+Version:	1.1.40
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
 Source0:	https://download.gnome.org/sources/libxslt/1.1/%{name}-%{version}.tar.xz
-# Source0-md5:	22e9eb7c23825124e786611b3760a3c7
+# Source0-md5:	d9f936c2d94cbb229b504d48b2649376
 Patch0:		%{name}-m4.patch
 Patch1:		LFS.patch
 Patch2:		%{name}-libs-no-libdir.patch
