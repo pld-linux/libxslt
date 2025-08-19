@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
 Version:	1.1.43
-Release:	3
+Release:	4
 License:	MIT
 Group:		Libraries
 #Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
@@ -19,6 +19,7 @@ Source0:	https://download.gnome.org/sources/libxslt/1.1/%{name}-%{version}.tar.x
 # Source0-md5:	5dc0179c81be7a3082b43030ecfdebd4
 Patch0:		LFS.patch
 Patch1:		%{name}-libs-no-libdir.patch
+Patch2:		gnome-libxslt-bug-139-apple-fix.diff
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.16.3
@@ -159,6 +160,7 @@ Moduły języka Python 3 dla biblioteki libxslt.
 %setup -q
 %patch -P 0 -p1
 %patch -P 1 -p1
+%patch -P 2 -p1
 
 %{__sed} -i -e 's,\$(datadir)/gtk-doc/html,%{_gtkdocdir},' \
 	doc/devhelp/Makefile.am doc/EXSLT/devhelp/Makefile.am
