@@ -5,21 +5,20 @@
 %bcond_without	static_libs	# static libraries
 %bcond_with	tests		# test suite
 
-%define		libxml2ver	1:2.6.30
+%define		libxml2ver	1:2.15.1
 Summary:	XSLT processor
 Summary(pl.UTF-8):	Procesor XSLT
 Summary(pt_BR.UTF-8):	Biblioteca que disponibiliza o sistema XSLT do GNOME
 Name:		libxslt
-Version:	1.1.43
-Release:	5
+Version:	1.1.45
+Release:	1
 License:	MIT
 Group:		Libraries
 #Source0:	ftp://xmlsoft.org/libxml2/%{name}-%{version}.tar.gz
 Source0:	https://download.gnome.org/sources/libxslt/1.1/%{name}-%{version}.tar.xz
-# Source0-md5:	5dc0179c81be7a3082b43030ecfdebd4
+# Source0-md5:	84bb3f6ba7f5ee98af5dcd72e828c73e
 Patch0:		LFS.patch
 Patch1:		%{name}-libs-no-libdir.patch
-Patch2:		gnome-libxslt-bug-139-apple-fix.diff
 URL:		http://xmlsoft.org/XSLT/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.16.3
@@ -161,7 +160,6 @@ Moduły języka Python 3 dla biblioteki libxslt.
 %setup -q
 %patch -P 0 -p1
 %patch -P 1 -p1
-%patch -P 2 -p1
 
 %{__sed} -i -e 's,\$(datadir)/gtk-doc/html,%{_gtkdocdir},' \
 	doc/devhelp/Makefile.am doc/EXSLT/devhelp/Makefile.am
