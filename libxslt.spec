@@ -30,7 +30,7 @@ BuildRequires:	pkgconfig
 %if %{with python2}
 BuildRequires:	python >= 2
 BuildRequires:	python-devel >= 2
-BuildRequires:	python-libxml2 >= %{libxml2ver}
+BuildRequires:	python-libxml2 >= 1:2.14
 BuildRequires:	python-modules
 %endif
 %if %{with python3}
@@ -132,7 +132,7 @@ Summary:	Python 2 support for libxslt
 Summary(pl.UTF-8):	Moduły języka Python 2 dla biblioteki libxslt
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-libxml2 >= %{libxml2ver}
+Requires:	python-libxml2 >= 1:2.14
 Requires:	python-modules
 Obsoletes:	libxslt-python < 1.1
 
