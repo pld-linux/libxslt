@@ -45,8 +45,8 @@ BuildRequires:	rpmbuild(macros) >= 2.043
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	libgcrypt >= 1.1.42
-Requires:	libxml2 >= %{libxml2ver}
+Requires:	libgcrypt%{?_isa} >= 1.1.42
+Requires:	libxml2%{?_isa} >= %{libxml2ver}
 Obsoletes:	libxslt1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -67,9 +67,9 @@ Summary:	Header files for libxslt
 Summary(pl.UTF-8):	Pliki nagłówkowe libxslt
 Summary(pt_BR.UTF-8):	Bibliotecas, includes, etc. para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	libgcrypt-devel >= 1.1.42
-Requires:	libxml2-devel >= %{libxml2ver}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
+Requires:	libgcrypt-devel%{?_isa} >= 1.1.42
+Requires:	libxml2-devel%{?_isa} >= %{libxml2ver}
 Obsoletes:	libxslt1-devel
 
 %description devel
@@ -88,7 +88,7 @@ Summary:	Static libraries of libxslt
 Summary(pl.UTF-8):	Biblioteki statyczne libxslt
 Summary(pt_BR.UTF-8):	Bibliotecas estáticas para incluir o mecanismo XSLT do GNOME
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static libraries of libxslt - XSLT processor.
@@ -118,7 +118,7 @@ Dokumentacja API bibliotei libxslt.
 Summary:	XSLT processor
 Summary(pl.UTF-8):	Procesor XSLT
 Group:		Applications/Text
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 Obsoletes:	libxslt-proc
 
 %description progs
@@ -131,7 +131,7 @@ Procesor XSLT.
 Summary:	Python 2 support for libxslt
 Summary(pl.UTF-8):	Moduły języka Python 2 dla biblioteki libxslt
 Group:		Libraries/Python
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 Requires:	python-libxml2 >= 1:2.14
 Requires:	python-modules
 Obsoletes:	libxslt-python < 1.1
@@ -146,7 +146,7 @@ Moduły języka Python 2 dla biblioteki libxslt.
 Summary:	Python 3 support for libxslt
 Summary(pl.UTF-8):	Moduły języka Python 3 dla biblioteki libxslt
 Group:		Libraries/Python
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 Requires:	python3-libxml2 >= %{libxml2ver}
 Requires:	python3-modules >= 1:3.2
 
